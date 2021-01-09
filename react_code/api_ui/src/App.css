@@ -1,0 +1,119 @@
+.banner {
+  text-align: center;
+  font-size: 25px;
+}
+
+.centi {
+  text-align: center;
+}
+
+.desc {
+  text-align: center;
+  font-size: 12px;
+  color:  black;
+}
+
+.menu_stage {
+  text-align: center;
+  background-color: lightgrey;
+  width: 30%;
+  padding: 25px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.menu_select {
+  background-color: white;
+  padding: 25px;
+}
+
+.menu_select select {
+  border: 1;
+  width: 125%;
+  height: var(--select-height);
+}
+
+.menu_display {
+  text-align: center;
+  background-color: green;
+  width: 70%;
+  padding: 25px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.wrapper {
+  border: 1px solid white;
+  width: 45%;
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nwrapper {
+  visibility: hidden;
+}
+
+.button input {
+  display: inline-block;
+  float: center;
+  width: 130px;
+
+}
+
+.question strong {
+  text-decoration: none;
+  text-align: center;
+  color:  blue;
+}
+
+.answer {
+  visibility: hidden;
+}
+
+.answered strong {
+  text-decoration: none;
+  text-align: center;
+  color:  blue;
+}
+
+.ansform {
+  text-align: center;
+  visibility: visble;
+}
+
+.nansform {
+  text-align: center;
+  visibility: hidden;
+}
+
+label{
+    display: inline-block;
+    float: center;
+    clear: center;
+    size: 400px;
+    width: 150px;
+    text-align: center;
+}
+
+input {
+  display: inline-block;
+  float: center;
+  width: 350px;
+}

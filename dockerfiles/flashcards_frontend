@@ -1,0 +1,19 @@
+FROM node:15.3.0-buster
+RUN apt update -y
+RUN apt install vim curl wget net-tools netcat git tree -y
+RUN mkdir /opt/go/
+RUN mkdir /opt/go/src
+RUN mkdir /opt/go/bin
+RUN mkdir /opt/go/pkg
+WORKDIR /tmp
+RUN curl -O https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
+RUN tar xvf go1.14.1.linux-amd64.tar.gz 
+RUN chown -R root:root ./go
+RUN mv ./go /usr/local/
+ENV GOPATH="/opt/go"
+ENV PATH="PATH=$PATH:/usr/local/go/bin:$GOPATH/bin"
+RUN rm -f /tmp/go*.tar.gz
+RUN go version
+ENV GOBIN="/opt/go/bin"
+WORKDIR /
+RUN mkdir /code

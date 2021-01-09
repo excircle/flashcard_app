@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  db:
+    image:  flashcards/mysql57:latest
+    command: ['--defaults-file=/etc/my.cnf']
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=sqlpass
+      - MYSQL_DATABASE=goapi
+      - MYSQL_USER=goapi
+      - MYSQL_PASSWORD=sqlpass
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+  api:
+    image: flashcards/goapi:latest
+    command: bash -c "sleep 1000000000"
+    volumes:
+      - ./go-api:/opt/go
+    ports:
+      - "0.0.0.0:8000:8000"
+    depends_on:
+      - db
+  ui:
+    image: flashcards/frontend:latest
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./react_code:/code
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db

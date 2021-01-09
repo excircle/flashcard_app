@@ -1,0 +1,4 @@
+FROM mysql:5.7
+RUN apt update -y
+RUN apt install vim curl wget net-tools netcat git tree procps -y
+RUN curl https://raw.githubusercontent.com/excircle/share/master/my.cnf -o /etc/my.cnf
